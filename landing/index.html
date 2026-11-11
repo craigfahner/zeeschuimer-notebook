@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+  Replaces JupyterLite's root index.html (copied over it by the deploy workflow).
+  It sends visitors straight to the Zeeschuimer analysis notebook instead of the
+  JupyterLab file browser. To land in the full JupyterLab interface instead,
+  change "notebooks/" to "lab/" below.
+
+  The jupyter-config-data script must stay: the other JupyterLite pages read it.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Zeeschuimer analysis</title>
+    <script id="jupyter-config-data" type="application/json" data-jupyter-lite-root=".">
+      {}
+    </script>
+    <script>
+      window.location.replace('notebooks/index.html?path=zeeschuimer_analysis.ipynb');
+    </script>
+  </head>
+  <body>
+    <p>
+      Opening the notebook…
+      <a href="notebooks/index.html?path=zeeschuimer_analysis.ipynb">Click here</a> if nothing happens.
+    </p>
+  </body>
+</html>
